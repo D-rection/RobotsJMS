@@ -29,7 +29,7 @@ public class Field implements IAvaibleMethods{
     {
         FieldCell cell = FieldCell.getCell(x, y);
         if (!badCells.contains(cell))
-            target.setTargetPosition(x, y);
+            target.setTargetPosition(x, y); //Можем навесить
         else {
             System.out.println("Bad Cell!" + cell.X + " " + cell.Y);
             System.out.println(x + " " + y);
@@ -42,7 +42,7 @@ public class Field implements IAvaibleMethods{
     }
 
     public void onModelUpdateEvent(){
-        bug.onModelUpdateEvent(target.X_Position, target.Y_Position);
+        bug.onModelUpdateEvent(target.X_Position, target.Y_Position); //Можем навесить
         if (isSmash()) {
             System.out.println("Bug is dead...");
             System.exit(0);
@@ -51,7 +51,7 @@ public class Field implements IAvaibleMethods{
 
     public void draw()
     {
-        bug.draw();
-        target.draw();
+        bug.draw(); //Можем навесить
+        target.draw(); //Можем навесить
     }
 }

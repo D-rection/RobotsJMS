@@ -68,7 +68,7 @@ public class GameField {
             @Override
             public void handle(MouseEvent e) {
                 field.setTargetPosition(e.getX(), e.getY());
-            }
+            } //Можем навесить
         });
     }
 
@@ -86,6 +86,6 @@ public class GameField {
         grass.setFitWidth(pane.getWidth());
         canvas.setHeight(pane.getHeight());
         canvas.setWidth(pane.getWidth());
-        field.draw();
+        field.draw(); // Можем навесить
     }
 }
