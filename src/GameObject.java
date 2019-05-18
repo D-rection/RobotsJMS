@@ -2,19 +2,14 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import java.io.File;
 
-public abstract class GameObject implements IAvaibleMethods {
-    public volatile double X_Position;
-    public volatile double Y_Position;
-    public volatile double Direction = 0;
-    public final double Size;
-    public ImageView Picture;
+abstract class GameObject {
+    volatile double X_Position;
+    volatile double Y_Position;
+    volatile double Direction = 0;
+    final double Size;
+    ImageView Picture;
 
-    static enum Methods {
-        Draw
-    }
-
-
-    public GameObject(double x, double y, String path, double size)
+    GameObject(double x, double y, String path, double size)
     {
         Size = size;
         loadImage(path, size, size);
@@ -29,7 +24,7 @@ public abstract class GameObject implements IAvaibleMethods {
         Picture = new ImageView(image);
     }
 
-    public void draw()
+    void draw()
     {
         double drawX = X_Position - Size / 2;
         double drawY = Y_Position - Size / 2;
