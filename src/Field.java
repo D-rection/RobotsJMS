@@ -1,12 +1,14 @@
 import java.util.HashSet;
 
-public class Field {
+public class Field implements IAvaibleMethods{
     private HashSet<FieldCell> badCells = new HashSet<>();
-
     private Bug bug;
     private Target target;
-
     private  HashSet<FieldCell> allCells = new HashSet<>();
+
+    static enum Methods{
+        setTargetPosition
+    }
 
     public Field(Bug bug, Target target, Wall[] walls, Mine[] mines)
     {
