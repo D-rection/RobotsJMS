@@ -3,18 +3,20 @@ import javafx.scene.image.ImageView;
 import java.io.File;
 
 abstract class GameObject {
-    volatile double X_Position;
-    volatile double Y_Position;
-    volatile double Direction = 0;
+    double X_Position;
+    double Y_Position;
+    double Direction = 0;
+    final String QueueName;
     final double Size;
     ImageView Picture;
 
-    GameObject(double x, double y, String path, double size)
+    GameObject(double x, double y, String path, double size, String queueName)
     {
         Size = size;
         loadImage(path, size, size);
         X_Position = x;
         Y_Position = y;
+        QueueName = queueName;
     }
 
     private void loadImage(String fileName, double width, double height){

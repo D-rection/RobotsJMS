@@ -10,11 +10,11 @@ class Target extends GameObject {
     private MessageReceiver m_receiver;
     private final Object m_objForSync = new Object();
 
-    Target(double x, double y)
+    Target(double x, double y, String queueName)
     {
-        super(x, y, "apple.png", 30);
+        super(x, y, "apple.png", 30, queueName);
         Direction = - Math.PI / 2;
-        m_receiver = new MessageReceiver("Target", m_buffer);
+        m_receiver = new MessageReceiver(queueName, m_buffer);
         m_receiver.startReceiveMessages();
 
         m_timer.schedule(new TimerTask() {
@@ -22,10 +22,10 @@ class Target extends GameObject {
             public void run() {
                 bufferChecker();
             }
-        }, 0, 5);
+        }, 0, 1);
     }
 
-    private static Timer initTimer() {
+    private Timer initTimer() {
         Timer timer = new Timer("messages checker", true);
         return timer;
     }
@@ -63,7 +63,7 @@ class Target extends GameObject {
 
     }
 
-    void setTargetPosition(double x, double y) {
+    private void setTargetPosition(double x, double y) {
         X_Position = x;
         Y_Position = y;
     }

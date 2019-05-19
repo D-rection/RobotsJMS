@@ -1,3 +1,8 @@
+import java.util.LinkedList;
+import java.util.StringTokenizer;
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class Bug extends GameObject {
 
     public final double maxVelocity = 0.1;
@@ -5,9 +10,61 @@ public class Bug extends GameObject {
 
     private double duration = 10;
 
-    public Bug(double x, double y)
+    private final Timer m_timer = initTimer();
+    static volatile LinkedList<String> m_buffer = new LinkedList<>();
+    private MessageReceiver m_receiver;
+    private final Object m_objForSync = new Object();
+
+    public Bug(double x, double y, String queueName)
     {
-        super(x, y, "bug_1.png", FieldCell.translateFactor);
+        super(x, y, "bug_1.png", FieldCell.translateFactor, queueName);
+
+        m_receiver = new MessageReceiver(queueName, m_buffer);
+        m_receiver.startReceiveMessages();
+
+        m_timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                bufferChecker();
+            }
+        }, 0, 1);
+    }
+
+    private void bufferChecker() {
+        synchronized (m_objForSync) {
+            if (m_buffer.size() != 0) {
+                for (int i = 0; i < m_buffer.size(); i++) {
+                    parseMessages(m_buffer.get(i));
+                }
+                m_buffer.clear();
+            }
+        }
+    }
+
+    private void parseMessages(String message) {
+
+        StringTokenizer st = new StringTokenizer(message, " (,)");
+        String[] elements = new String[st.countTokens()];
+        int i = 0;
+        while(st.hasMoreTokens()) {
+            elements[i] = st.nextToken();
+            i++;
+        }
+
+        switch (elements[0]) {
+            case "onModelUpdateEvent":
+                onModelUpdateEvent(Double.parseDouble(elements[1]), Double.parseDouble(elements[2]));
+                break;
+            case "draw":
+                draw();
+                break;
+        }
+
+    }
+
+    private Timer initTimer() {
+        Timer timer = new Timer("messages checker", true);
+        return timer;
     }
 
     private double asNormalizedRadians(double angle) {
@@ -60,7 +117,7 @@ public class Bug extends GameObject {
         Direction = asNormalizedRadians(Direction + angularVelocity * duration);
     }
 
-    public void onModelUpdateEvent(double targetX, double targetY) {
+    private void onModelUpdateEvent(double targetX, double targetY) {
         double dist = distance(targetX, targetY, X_Position, Y_Position);
         if (dist < 0.5) {
             return;

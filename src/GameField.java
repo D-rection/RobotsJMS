@@ -11,6 +11,8 @@ import java.util.TimerTask;
 public class GameField {
     private final Timer m_timer = initTimer();
 
+    private MessageSender m_sender = new MessageSender();
+
     private static Timer initTimer() {
         Timer timer = new Timer("events generator", true);
         return timer;
@@ -26,10 +28,10 @@ public class GameField {
         this.pane = pane;
         grass = loadFile("grass.jpg", this.pane.getWidth(), this.pane.getHeight());
 
-        Target apple = new Target(150, 100);
+        Target apple = new Target(150, 100, "target");
         this.pane.getChildren().add(apple.Picture);
 
-        Bug bug = new Bug(100, 100);
+        Bug bug = new Bug(100, 100, "bug");
         this.pane.getChildren().add(bug.Picture);
 
         Mine[] mines = new Mine[]{new Mine(1100, 100), new Mine(500, 500), new Mine(200, 200), new Mine(800, 200),
@@ -46,7 +48,7 @@ public class GameField {
             this.pane.getChildren().add(wall.Picture);
         }
 
-        field = new Field(bug, apple, walls, mines);
+        field = new Field(bug, apple,"field", walls, mines);
 
         canvas = new Canvas();
         this.pane.getChildren().add(canvas);
@@ -54,7 +56,7 @@ public class GameField {
         m_timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                field.onModelUpdateEvent();
+                m_sender.sendMessage(field.QueueName, "onModelUpdateEvent");
             }
         }, 0, 5);
         m_timer.schedule(new TimerTask() {
@@ -67,8 +69,10 @@ public class GameField {
         this.canvas.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent e) {
-                field.setTargetPosition(e.getX(), e.getY());
-            } //Можем навесить
+                String textMessage = "setTargetPosition(" +
+                        String.valueOf(e.getX()) + "," + String.valueOf(e.getY());
+                m_sender.sendMessage(field.QueueName, textMessage);
+            }
         });
     }
 
@@ -86,6 +90,6 @@ public class GameField {
         grass.setFitWidth(pane.getWidth());
         canvas.setHeight(pane.getHeight());
         canvas.setWidth(pane.getWidth());
-        field.draw(); // Можем навесить
+        m_sender.sendMessage(field.QueueName, "draw");
     }
 }
