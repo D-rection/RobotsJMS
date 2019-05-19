@@ -31,7 +31,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
+            <state relative-caret-position="49">
               <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -43,8 +43,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Target.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+            <state relative-caret-position="731">
+              <caret line="51" column="16" lean-forward="true" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -58,14 +58,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Field.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="115" selection-start-line="115" selection-end-line="115" />
+            <state relative-caret-position="289">
+              <caret line="41" column="15" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#Field#0;class#Field#0" />
                 <element signature="method#bufferChecker#0;class#Field#0" />
                 <element signature="method#parseMessages#0;class#Field#0" />
                 <element signature="method#initTimer#0;class#Field#0" />
@@ -92,11 +91,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Bug.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="55" selection-start-line="55" selection-end-line="55" />
+            <state relative-caret-position="697">
+              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#asNormalizedRadians#0;class#Bug#0" />
@@ -133,12 +132,12 @@
         <option value="$PROJECT_DIR$/src/MessageSender.java" />
         <option value="$PROJECT_DIR$/src/MessageReceiver.java" />
         <option value="$PROJECT_DIR$/src/GameObject.java" />
-        <option value="$PROJECT_DIR$/src/Target.java" />
-        <option value="$PROJECT_DIR$/src/Bug.java" />
         <option value="$PROJECT_DIR$/src/Wall.java" />
         <option value="$PROJECT_DIR$/src/Mine.java" />
-        <option value="$PROJECT_DIR$/src/Field.java" />
         <option value="$PROJECT_DIR$/src/GameField.java" />
+        <option value="$PROJECT_DIR$/src/Field.java" />
+        <option value="$PROJECT_DIR$/src/Target.java" />
+        <option value="$PROJECT_DIR$/src/Bug.java" />
       </list>
     </option>
   </component>
@@ -223,7 +222,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25637585" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25637585" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -232,8 +231,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39943343" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -282,12 +281,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Bug.java</url>
-          <line>58</line>
-          <properties />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Bug.java</url>
           <line>55</line>
@@ -356,30 +349,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Target.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Wall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="63" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Mine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -399,6 +368,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Field.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="41" column="15" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#bufferChecker#0;class#Field#0" />
+            <element signature="method#parseMessages#0;class#Field#0" />
+            <element signature="method#initTimer#0;class#Field#0" />
+            <element signature="method#setTargetPosition#0;class#Field#0" />
+            <element signature="e#1749#1841#1" />
+            <element signature="e#3019#3020#0" expanded="true" />
+            <element signature="method#onModelUpdateEvent#0;class#Field#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="63" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="49">
+          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/GameField.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
@@ -411,10 +414,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Target.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="51" column="16" lean-forward="true" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Bug.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        <state relative-caret-position="697">
+          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#asNormalizedRadians#0;class#Bug#0" />
@@ -423,24 +433,6 @@
             <element signature="method#angleTo#0;class#Bug#0" />
             <element signature="method#move#0;class#Bug#0" />
             <element signature="method#onModelUpdateEvent#0;class#Bug#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Field.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="115" selection-start-line="115" selection-end-line="115" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#Field#0;class#Field#0" />
-            <element signature="method#bufferChecker#0;class#Field#0" />
-            <element signature="method#parseMessages#0;class#Field#0" />
-            <element signature="method#initTimer#0;class#Field#0" />
-            <element signature="method#setTargetPosition#0;class#Field#0" />
-            <element signature="e#1749#1841#1" />
-            <element signature="e#3019#3020#0" expanded="true" />
-            <element signature="method#onModelUpdateEvent#0;class#Field#0" />
           </folding>
         </state>
       </provider>

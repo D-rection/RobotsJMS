@@ -27,7 +27,7 @@ public class Bug extends GameObject {
             public void run() {
                 bufferChecker();
             }
-        }, 0, 1);
+        }, 0, 2);
     }
 
     private void bufferChecker() {
@@ -54,9 +54,6 @@ public class Bug extends GameObject {
         switch (elements[0]) {
             case "onModelUpdateEvent":
                 onModelUpdateEvent(Double.parseDouble(elements[1]), Double.parseDouble(elements[2]));
-                break;
-            case "draw":
-                draw();
                 break;
         }
 

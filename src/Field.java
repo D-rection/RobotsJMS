@@ -39,7 +39,7 @@ public class Field{
             public void run() {
                 bufferChecker();
             }
-        }, 0, 1);
+        }, 0, 2);
     }
 
     private void bufferChecker() {
@@ -113,7 +113,7 @@ public class Field{
 
     private void draw()
     {
-        m_sender.sendMessage(bug.QueueName, "draw");
-        m_sender.sendMessage(target.QueueName, "draw");
+        bug.draw();
+        target.draw();
     }
 }

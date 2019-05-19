@@ -22,7 +22,7 @@ class Target extends GameObject {
             public void run() {
                 bufferChecker();
             }
-        }, 0, 1);
+        }, 0, 2);
     }
 
     private Timer initTimer() {
@@ -55,9 +55,6 @@ class Target extends GameObject {
         switch (elements[0]) {
             case "setTargetPosition":
                 setTargetPosition(Double.parseDouble(elements[1]), Double.parseDouble(elements[2]));
-                break;
-            case "draw":
-                draw();
                 break;
         }
 
